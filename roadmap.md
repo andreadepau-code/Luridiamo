@@ -1,0 +1,12 @@
+- [x] Integrate the supplied logo in the upper-left branding and favicon.
+- [x] Add a brief opening logo animation and verify the app remains usable afterward.
+- [x] Fix the failed places read through same-origin loading and verify map, list, details, and retry behavior.
+- [x] Add editing of existing places and custom specialties.
+- [x] Store and display weekly opening hours with correct overnight status.
+- [x] Verify saved edits and daily schedules through the app and focused tests.
+- [x] Remove the quick filter chips from the top of the map screen and verify search still works.
+- [x] Research famous Milan late-night paninari with sourced addresses, weekly hours, and real photo availability.
+- [x] Add three documented places without changing existing entries and verify their details and sources in the app.
+- [x] Exclude real-photo research from the place catalog expansion, as requested.
+- [ ] Expand the catalog with online-recommended Milan night kiosks, verified details and sources, preserving existing places.
+- [ ] Verify the expanded catalog in the map, list and place details.

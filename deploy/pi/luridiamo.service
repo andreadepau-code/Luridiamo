@@ -1,0 +1,17 @@
+[Unit]
+Description=Luridiamo — baracchini notturni di Milano
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/luridiamo
+Environment=SUPABASE_URL=https://kdxenqerlbpypinupzmq.supabase.co
+Environment=SUPABASE_PUBLISHABLE_KEY=sb_publishable_3e76awQFJFklYgm1oljRYA_CzN4jVuj
+Environment=PORT=3000
+ExecStart=/usr/bin/node /opt/luridiamo/.output-node/server/index.mjs
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

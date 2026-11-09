@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node scripts/inject-wrangler-vars.mjs",
     "build:pi": "bash scripts/build-for-pi.sh",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",

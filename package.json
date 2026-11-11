@@ -1,0 +1,10 @@
+{
+    "name": "luridiamo-app",
+    "version": "1.0.0",
+    "description": "Luridiamo - Community map of night snack bars in Milan",
+    "scripts": {
+      "build": "echo 'Build complete'"
+    },
+    "keywords": ["leaflet", "map", "milano"],
+    "license": "MIT"
+  }

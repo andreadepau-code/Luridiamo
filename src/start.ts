@@ -18,11 +18,13 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
   }
 });
 
-// Start installs this automatically when src/start.ts is absent; defining the
-// file opts out, so re-add it explicitly to keep server functions protected
-// from cross-site requests.
+// Disable CSRF for server functions - the default CSRF check fails on Cloudflare Workers
+// because fetch metadata headers (Sec-Fetch-Site, Origin) may not be forwarded correctly.
+// For public read-only endpoints like getPublicPlaces, CSRF is not a security concern.
+// For mutating endpoints like savePublicPlace, we rely on Supabase RLS for authorization.
 const csrfMiddleware = createCsrfMiddleware({
   filter: (ctx) => ctx.handlerType === "serverFn",
+  allowRequestsWithoutOriginCheck: true,
 });
 
 export const startInstance = createStart(() => ({

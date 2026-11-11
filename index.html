@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#121212">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Luridiamo - Mappa dei Luridi di Milano</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header id="header" class="header">
+      <h1>🌙 Luridiamo</h1>
+      <button id="search-btn" class="search-btn">🔍</button>
+    </header>
+
+    <!-- Search Bar -->
+    <div id="search-bar" class="search-bar hidden">
+      <input type="text" id="search-input" class="search-input" placeholder="Cerca un lurido...">
+      <button id="search-close" class="search-close">✕</button>
+    </div>
+
+    <!-- Filter Chips -->
+    <div id="filter-chips" class="filter-chips">
+      <button class="filter-chip active" data-filter="open">🟢 Aperti Ora</button>
+      <button class="filter-chip" data-filter="salamella">🥖 Specialità Salamella</button>
+      <button class="filter-chip" data-filter="late">🌙 Aperti dopo le 3:00</button>
+      <button class="filter-chip" data-filter="top">⭐ Top Recensiti</button>
+    </div>
+
+    <!-- Map -->
+    <div id="map" class="map-container"></div>
+
+    <!-- FAB -->
+    <button id="fab" class="fab" title="Aggiungi un Lurido">
+      <span class="fab-icon">＋</span>
+    </button>
+
+    <!-- Bottom Navigation -->
+    <nav id="bottom-nav" class="bottom-nav">
+      <button class="nav-item active" data-tab="home">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </button>
+      <button class="nav-item" data-tab="search">
+        <span class="nav-icon">🔍</span>
+        <span class="nav-label">Ricerca</span>
+      </button>
+      <button class="nav-item" data-tab="map">
+        <span class="nav-icon">🗺️</span>
+        <span class="nav-label">Mappa</span>
+      </button>
+      <button class="nav-item" data-tab="profile">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Profilo</span>
+      </button>
+    </nav>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal-overlay">
+      <div id="detail-modal-content" class="modal"></div>
+    </div>
+
+    <!-- Add Place Modal -->
+    <div id="add-modal" class="modal-overlay">
+      <div id="add-modal-content" class="modal"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Supabase Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- App -->
+  <script src="src/index.js"></script>
+</body>
+</html>

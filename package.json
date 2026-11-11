@@ -1,0 +1,30 @@
+{
+  "name": "luridiamo-app",
+  "version": "1.0.0",
+  "description": "Luridiamo - Community map of night-time snack bars and paninis in Milan",
+  "author": "Claude Code",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm start\" \"ngrok http 8000\""
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "helmet": "^7.0.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "leaflet",
+    "map",
+    "night-food",
+    "milano",
+    "snack-bars",
+    "paninis"
+  ],
+  "license": "MIT"
+}

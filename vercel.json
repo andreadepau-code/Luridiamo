@@ -2,7 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "framework": "static",
-  "public": true,
   "rewrites": [
     {
       "source": "/api/(.*)",

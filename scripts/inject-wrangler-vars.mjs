@@ -9,6 +9,11 @@ const wranglerPath = join(__dirname, "..", ".output", "server", "wrangler.json")
 
 const config = JSON.parse(readFileSync(wranglerPath, "utf8"));
 
+// Normalize Windows-style paths so the generated config works on Linux build runners.
+if (config.assets?.directory) {
+  config.assets.directory = config.assets.directory.replace(/\\/g, "/");
+}
+
 config.vars = {
   SUPABASE_URL:
     process.env.SUPABASE_URL || "https://kdxenqerlbpypinupzmq.supabase.co",
